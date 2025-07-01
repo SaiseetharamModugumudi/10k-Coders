@@ -1,0 +1,24 @@
+*{
+  align-content: center;
+  background-color: aquamarine;
+}
+.a1 h2 {
+  color: orange;
+}
+.a2 > h1 {
+  color: green;
+}
+.a1 ~ .a2 h2 {
+  color: red;
+  background-color: yellow;
+}
+.a2 + h4 {
+  color: blue;
+  background-color: blanchedalmond;
+}
+.b2 h3 {
+  color: purple;
+}
+.a1 ~ .a2 > h1 {
+  text-decoration: underline;
+}
