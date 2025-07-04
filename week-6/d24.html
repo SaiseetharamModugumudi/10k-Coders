@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>box model</title>
+  <style>
+    * {
+      box-sizing:border-box;
+      padding-top: 20px;
+    }
+
+    .container1,
+    .container2 {
+      display: flex;
+      gap:20px;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .food-box1,.food-box2,.food-box3,.food-box4,.food-box5,.food-box6,.food-box7,.food-box8{
+      border: 15px solid white;
+      height: fit-content;
+      text-align: center;
+      width: 450px !important;
+
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>My Food</h>
+    <div class="container1">
+      <div class="food-box1">
+        <img src="https://www.w3schools.com/w3images/sandwich.jpg" alt="Sandwich" >
+        <h2>The Perfect Sandwich, A Real NYC Classic</h2>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      </div>
+
+      <div class="food-box2">
+        <img src="https://www.w3schools.com/w3images/steak.jpg" alt="Steak" >
+        <h2>Let Me Tell You About This Steak</h2>
+        <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      </div>
+
+      <div class="food-box3">
+        <img src="https://www.w3schools.com/w3images/cherries.jpg" alt="Cherries">
+        <h2>Cherries, interrupted</h2>
+        <p>Lorem ipsum text praesent tincidunt ipsum lipsum. What else?</p>
+      </div>
+
+      <div class="food-box4">
+        <img src="https://www.w3schools.com/w3images/wine.jpg" alt="Wine and Pasta">
+        <h2>Once Again, Robust Wine and Vegetable Pasta</h2>
+        <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      </div>
+    </div>
+    <div class="container2">
+      <section>
+        <div class="food-box5">
+          <img src="https://www.w3schools.com/w3images/popsicle.jpg" alt="Sandwich">
+          <h2>All I Need Is a Popsiclec</h2>
+          <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+      </section>
+      <section>
+        <div class="food-box6">
+          <img src="https://www.w3schools.com/w3images/salmon.jpg" alt="Steak" >
+          <h2>Salmon For Your Skink</h2>
+          <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+      </section>
+      <section>
+        <div class="food-box7">
+          <img src="https://www.w3schools.com/w3images/sandwich.jpg" alt="Cherries">
+          <h2>The Perfect Sandwich, A Real Classic</h2>
+          <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+      </section>
+      <section>
+        <div class="food-box8">
+          <img src="https://www.w3schools.com/w3images/croissant.jpg" alt="Wine and Pasta">
+          <h2>Le French</h2>
+          <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.p>
+        </div>
+      </section>
+    </div>
+    <div class="chef">
+    <div class="food">
+        <h2>About Me, The Food Man</h2>
+        <centre><img src="https://www.w3schools.com/w3images/chef.jpg" alt="chef" width="550"></centre>
+        <h3>I am Who I Am!</h3>
+        <p>With Passion For Real, Good Food</p>
+    </div>
+
+</body>
+
+</html>
