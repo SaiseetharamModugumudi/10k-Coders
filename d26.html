@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text alignments</title>
+    <link rel="stylesheet" href="d26.css">
+    <style>
+    .para {
+      width: 500px;
+      height: 300px;
+      box-shadow: 5px 5px 2px #333;
+       border: 15px solid green;
+       padding: 50px;
+       margin: 20px;
+    }   
+    .tabs {
+      text-align: center;
+      display: inline;
+    }
+    .section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px 10px;
+    text-align: center;
+    
+  }
+  .item1 {
+  grid-area: header;
+  background-color: purple;
+  text-align: center;
+  color: #ffffff;
+}
+
+.item1 > h1 {
+  font-size: 40px;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="navbar">
+    <div class="nav-left"><a href="#">Home</a></div>
+    <div class="nav-center"><a href="#about">About</a></div>
+    <div class="nav-right"><a href="#contact">Contact</a></div>
+    </div>
+    <h1>Sai Securities</h1>
+    <div class="para">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quod veritatis corporis accusantium recusandae eius reiciendis delectus corrupti excepturi sequi, quibusdam eveniet harum voluptatum qui praesentium alias vel! Reprehenderit autem praesentium accusamus esse omnis ipsam dolor blanditiis voluptatibus ipsa quae officia ut quia molestiae placeat aspernatur, laudantium molestias possimus mollitia tempore! Rem quia enim similique asperiores aliquam doloremque voluptatum ad laudantium sapiente assumenda? Eum ex a, dolores totam illo amet doloribus deleniti ea quo et obcaecati aliquam autem quibusdam tempore magnam delectus voluptates dolorum dignissimos doloremque nesciunt. Est, a fugiat? Sit distinctio consequuntur nulla atque vel molestias alias. Nulla, tempora!
+    </body>
+    <div class="section">
+     <section id="about" class="para1">
+    <h2>About</h2>
+    <p>
+      Welcome to our website! We are passionate about creating amazing digital experiences and helping clients build their online presence. Our team specializes in web design, development, and user experience.
+    </p>
+  </section></div>
+  <div class="section">
+    <section id="contact" class="para2">
+    <h2>Contact</h2>
+    <p>
+      Have questions or want to work together? Reach out to us via email or phone:
+    </p>
+    <ul>
+      <li>Email: info@example.com</li>
+      <li>Phone: +91-9876543210</li>
+      <li>Address: 123, Main Street, Hyderabad, India</li>
+    </ul>
+  </section></div>
+</body>
+</html>
