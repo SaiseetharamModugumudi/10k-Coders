@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Food Blog</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fff;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      margin-bottom: 20px;
+    }
+
+    .navbar h1 {
+      font-weight: normal;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+      padding: 4px;
+      margin-right: 10px;
+    }
+
+    /* Grid Container */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px;
+      gap: 40px;
+      margin: 0 auto;
+    }
+
+    /* Card */
+    .card {
+      max-width: 300px;
+      text-align: center;
+      padding: 15px;
+      margin: 10px;
+      background-color: #fff;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      padding: 4px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin: 15px 0 10px;
+      font-size: 1.3rem;
+    }
+
+    .card p {
+      color: #333;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      padding: 5px;
+    }
+
+    /* About Section */
+    .about-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 60px auto;
+      padding: 20px;
+      max-width: 900px;
+      background-color: #fafafa;
+    }
+
+    .about-section img {
+      max-width: 100%;
+      height: auto;
+      padding: 8px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    /* Bio Section */
+    .bio {
+      text-align: center;
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 20px;
+      background-color: #fefefe;
+    }
+
+    .bio h2 {
+      margin-bottom: 10px;
+    }
+
+    .bio p {
+      font-size: 1rem;
+      line-height: 1.8;
+      padding: 10px;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="menu-icon">&#9776;</div>
+    <h1>My Food</h1>
+    <div>Mail</div>
+  </div>
+
+  <!-- First Row -->
+  <div class="container">
+    <div class="card">
+      <img src="https://www.w3schools.com/w3images/sandwich.jpg" alt="Sandwich">
+      <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="card">
+      <img src="https://www.w3schools.com/w3images/steak.jpg" alt="Steak">
+      <h3>Let Me Tell You About This Steak</h3>
+      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="card">
+      <img src="https://www.w3schools.com/w3images/cherries.jpg" alt="Cherries">
+      <h3>Cherries, interrupted</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.<br>What else?</p>
+    </div>
+    <div class="card">
+      <img src="https://www.w3schools.com/w3images/wine.jpg" alt="Pasta Wine">
+      <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+  </div>
+
+  <!-- Second Row -->
+  <div class="container">
+    <div class="card">
+      <img src="https://www.w3schools.com/w3images/popsicle.jpg" alt="Popsicle">
+      <h3>All I Need Is a Popsicle</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="card">
+      <img src="https://www.w3schools.com/w3images/salmon.jpg" alt="Salmon Dish">
+      <h3>Salmon For Your Skin</h3>
+      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="card">
+      <img src="https://www.w3schools.com/w3images/sandwich.jpg" alt="Classic Sandwich">
+      <h3>The Perfect Sandwich, A Real Classic</h3>
+      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="card">
+      <img src="https://www.w3schools.com/w3images/croissant.jpg" alt="French Food">
+      <h3>Le French</h3>
+      <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+  </div>
+
+  <!-- About Me -->
+  <div class="about-section">
+    <h2 style="font-size: 1.8rem;">About Me, The Food Man</h2>
+    <img src="https://www.w3schools.com/w3images/chef.jpg" alt="The Food Man">
+  </div>
+
+  <!-- Bio -->
+  <div class="bio">
+    <h2>I am Who I Am!</h2>
+    <p><em>With Passion For Real, Good Food</em></p>
+    <p>
+      Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. 
+      I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue 
+      gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida 
+      diam non fringilla.
+    </p>
+  </div>
+
+</body>
+</html>
