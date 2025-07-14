@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions</title>
+    <style>
+        body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #333;
+  padding: 10px 0;
+}
+
+.nav-menu {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+  margin: 0 20px;
+}
+
+.nav-item > a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.nav-item:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.dropdown li{
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.3s;
+}
+
+.dropdown li:hover {
+  background-color: #666;
+}
+
+.nav-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.image {
+    padding: 100px;
+      margin: 50px ;
+      width: 50%;
+      height: 700px;
+      border-radius: 50px;
+      background-repeat: no-repeat;
+      background-size: 100% 700px;
+}
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="#">Images</a>
+        <ul class="dropdown">
+          <li>Wallpapers</li>
+          <li>Illustrations</li>
+          <li>Icons</li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="#">Videos</a>
+        <ul class="dropdown">
+          <li>Tutorials</li>
+          <li>Short Films</li>
+          <li>Music Videos</li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="#">Music</a>
+        <ul class="dropdown">
+          <li>Classical</li>
+          <li>Pop</li>
+          <li>Instrumental</li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <img class="image" src="../1000059549.jpg" alt="jj" align="center">
+</body>
+</html>
