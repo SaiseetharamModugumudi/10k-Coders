@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gourmet au Catering</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 0px;
+      z-index: 10;
+    }
+   .navbar a {
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      letter-spacing: 3px;
+      font-size: 16px;
+    }
+
+    .spacer {
+      height: 70px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    .section {
+      display: flex;
+      gap: 40px;
+    }
+
+    .column {
+      flex: 1;
+    }
+
+    .section img {
+      width: 100%;
+      max-width: 500px;
+      height: 90%;
+    }
+
+    .menu-item {
+      margin-bottom: 30px;
+    }
+
+    .menu-item-title {
+      letter-spacing: 4px;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .menu-item-desc {
+      color: gray;
+      font-size: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-bottom: 1px solid gray;
+      margin-bottom: 20px;
+      font-family: Georgia, serif;
+    }
+
+    .contact-form textarea {
+      height: 100px;
+    }
+
+    .contact-form button {
+      padding: 10px 20px;
+      background-color: #eee;
+      border: none;
+      font-family: Georgia, serif;
+      cursor: pointer;
+    }
+
+    .contact-heading {
+      font-size: 32px;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div style="letter-spacing: 4px; font-size: 45px; font-family: copperplate, Papyrus, fantasy;">Bandar Bojanallu</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzPZynQlFt0D_s9mC-gI516lgXHHl0yyuo5g&s" alt="Banner" style="width: 100%;">
+  </div>
+  <div class="container">
+    <div class="section">
+      <div class="column">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN8sg0Akmrh7AvHQAHaXci6soD1U2WzXMoSA&s" alt="About Image">
+      </div>
+      <div class="column" style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="font-size: 32px; letter-spacing: 4px;" id="about">About Bandar Bojanallu</div>
+        <div style="letter-spacing: 4px;">Since 1999</div>
+        <div>
+          The Catering was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+          in voluptate velit esse cillum dolore eu fugiat nulla pariatur. We only use <span style="background-color:#eeeeee;">seasonal</span> ingredients.
+        </div>
+        <div style="color: rgb(169, 221, 26);">
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+      <div class="column">
+        <div class="menu-item">
+          <div class="menu-item-title" id="menu">Idly Sambar</div>
+          <div class="menu-item-desc">Hot Idly and Sambar at 5.50</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-title">Upma Pesarattu & Allam Pesarattu </div>
+          <div class="menu-item-desc">Natural Peanuts, kajju, Chilles, Almonds and Ginger at 7.00</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-title">Chappathi with Potato curry</div>
+          <div class="menu-item-desc">Smooth & Sofest atta Chapathi with spicy potato curry at 7.50</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-title">Egg Dosa</div>
+          <div class="menu-item-desc">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-title">Mysore Bonda with coconut chutney</div>
+          <div class="menu-item-desc">With syrup, butter and lots of berries 8.50</div>
+        </div>
+      </div>
+      <div class="column">
+        <img src="https://i0.wp.com/cookingfromheart.com/wp-content/uploads/2023/01/How-to-make-Pesarattu.jpg?resize=684%2C1024&ssl=1" alt="Menu Image">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section" style="flex-direction: column;">
+      <div class="contact-heading" id="contact">Contact</div>
+      <div>
+        <p>
+          We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy
+          the biggest criteria of them all, both look and taste. Do not hesitate to contact us.
+        </p>
+        <p style="font-weight: bold;">
+          Bandar Bojanallu, 42nd Living St, 43043 Amazon Forest, UK
+        </p>
+        <p>
+          You can also contact us by phone 040-6865422155 or email bandar@bojanallu.com, or you can send us a message here:
+        </p>
+        <div class="contact-form">
+          <input type="text" placeholder="Name">
+          <input type="text" placeholder="How many people">
+          
+          <textarea placeholder="Message \ Special requirements"></textarea>
+          <button>SEND MESSAGE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

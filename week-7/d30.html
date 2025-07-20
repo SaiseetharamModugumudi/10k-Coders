@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <style>
+        div {
+  width: 300px;
+  height: 300px;
+  border-radius: 15%;
+  background-color: red;
+  position: relative;
+  animation-iteration-count: infinite;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  0%   {background-color:red; 
+    left:0px; top:0px;}
+  25%  {background-color:yellow; 
+    left:500px; top:0px;}
+  50%  {background-color:blue;
+    background-size: 900px;
+    background-image: url('https://m.media-amazon.com/images/S/pv-target-images/4507007995dc4f9623167a73990326758c70bc01b015cfb712994603d198b387._SX1080_FMjpg_.jpg');
+     left:200px; top:200px;}
+  75%  {background-color:green; 
+    left:0px; top:200px;}
+  100% {background-color:red;
+     left:0px; top:0px;}
+}
+    </style>
+</head>
+<body>
+    <div class="p"></div><br>
+    <div class="p1"></div>
+</body>
+</html>

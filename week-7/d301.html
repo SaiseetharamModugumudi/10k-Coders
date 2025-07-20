@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gradient Animation Showcase</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #e6dada;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+    div {
+        background-color: rgb(203, 235, 224);
+        height: 600px;
+        width: 300px;
+    }
+    .ball {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ff4b2b, #ff416c);
+      position: relative;
+      animation: bounce 2s infinite ease-in-out;
+    }
+
+    @keyframes bounce {
+      0%, 100% { top: 0; }
+      50% { top: 150px; }
+   
+    }
+  </style>
+</head>
+<body>
+    <div>
+  <div class="ball"></div>
+    </div>
+</body>
+</html>
