@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transforms + Gradient + Animation</title>
+  <style>
+    body
+    {
+        height:100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+
+    }
+    .box {
+      height: 200px;
+      width: 200px;
+      border-radius: 20px;
+      background-color:rgb(28, 170, 170);
+      display: flex;
+      align-items: center;
+      justify-content: center; 
+    }
+    .box1 {
+      height: 200px;
+      width: 200px;
+      border-radius: 20px;
+      background-color:rgb(30, 207, 106);
+      display: flex;
+      align-items: center;
+      justify-content: center; 
+    }
+    .box:hover {
+      animation: pulse ;
+      /* background: repeating-linear-gradient(to right,red 20%,green 30%,blue 25%); */
+        background-image: repeating-radial-gradient(rgb(115, 184, 224), yellow 10%, green 15%, rgb(160, 160, 174) 20%);
+
+      transform: rotate(15deg) scale(1.5);
+    } 
+    .box1:hover {
+      animation: pulse ;
+      /* background: repeating-linear-gradient(to right,red 20%,green 30%,blue 25%); */
+        background-image: repeating-radial-gradient(rgb(115, 184, 224), yellow 10%, green 15%, rgb(160, 160, 174) 20%);
+
+      transform: rotate(-15deg) scale(1.5);
+    } 
+  </style>
+</head>
+<body>
+  <div class="box">
+    <p>Touch me!</p>
+  </div>
+  <div class="box1">
+    <p>Touch me!</p>
+  </div>
+</body>
+</html>
