@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex box</title>
+    <style>
+        body {
+  font-family: sans-serif;
+  /* background: repeating-conic-gradient(#fff, #ccc 5%); */
+  margin: 0;
+  padding: 20px;
+  height: 100vh;
+}
+
+.main {
+  border: 2px solid rgb(10, 17, 10);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100vh;
+}
+
+.item1,.item2,.item3,.item4,.item5,.item6 {
+  background-color: #d86f52;
+  border: 2px solid #999;
+  border-radius: 4px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.item1 {
+  height: 150px;
+}
+
+.middle {
+  display: flex;
+  gap: 10px;
+}
+
+.item2 {
+  flex: 2;
+  height: 200px;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item3,
+.item4 {
+  height: 90px;
+}
+
+.item5 {
+  height: 100px;
+}
+
+.item6 {
+  height: 30px;
+}
+ </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Flex layout</h1>
+    <div class="main">
+    <div class="item1">Heading</div>
+
+    <div class="middle">
+      <div class="item2">Article</div>
+      <div class="right">
+        <div class="item3">Text1</div>
+        <div class="item4">Text2</div>
+      </div>
+    </div>
+
+    <div class="item5">Main</div>
+    <div class="item6">Footer</div>
+  </div>
+</body>
+</html>
