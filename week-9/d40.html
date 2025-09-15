@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM js</title>
+</head>
+<body>
+    <h1>DOM </h1>
+    <p>Document Object Model</p>
+    <p id="demo">This is a simple example of using the DOM in JavaScript.</p>
+    <button onclick="handleClick()">Click Me</button>
+    <button id="log" onclick="handleClick1()">logout</button>
+    <p>0</p>
+    <button onclick="handleClick2()">-</button>
+    <button onclick="handleClick3()">+</button>
+    <script>
+        // #swiggy add item count
+        let count = 0;
+        let countDisplay = document.querySelector("p:nth-of-type(3)");
+        function handleClick2() {
+            count--;
+            countDisplay.textContent = count;
+        }
+        function handleClick3() {
+            count++;
+            countDisplay.textContent = count;
+        }
+
+        // #login and logout
+        let logButton = document.getElementById("log");
+        let isLoggedIn = false;
+        function handleClick1() {
+            if(isLoggedIn){
+                isLoggedIn = false;
+                heading.textContent = "You are logged out";
+                logButton.textContent = "logout";
+            }
+            else{
+                isLoggedIn = true;
+                heading.textContent = "You are logged in";
+                logButton.textContent = "login";
+            }
+        }
+
+        // #color and text change
+        let txt=document.getElementById("demo");
+        function handleClick() {
+            txt.style.color="green";
+            txt.textContent="You clicked the button!";
+        }
+    </script>
+</body>
+</html>

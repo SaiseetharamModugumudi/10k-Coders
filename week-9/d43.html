@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+    <style>
+        div{
+            text-align: center;
+            border: 5px solid black;
+            background-color: rgb(164, 224, 34);
+            height: 500px;
+        }
+        h1{
+            color:blue;
+        }
+        button{
+            background-color: lightgray;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <button class="button" ondblclick="txt()" id="txt">text</button>
+    <button class="button" ondblclick="width()" id="width">width</button>
+    <button class="button" ondblclick="height()" id="height">height</button>
+    <button class="button" ondblclick="txtcolor()" id="txtcolor">txt-color</button>
+    <button class="button" ondblclick="bgcolor()" id="bgcolor">bg-color</button>
+    <button class="button" ondblclick="borderRad()" id="borderRad">border-radius</button>
+    <br><br>    
+    <button>.</button><br><br>
+    <div>
+    <h1>No of cars required for n people entered</h1>
+    <input type="number" id="cars" value="0"><br><br>
+    <button class="button" ondblclick="calculate()" id="calculate">Calculate</button>
+    <p id="result"></p>
+    <button class="button" onclick="Suzuki()">Suzuki</button>
+    <button class="button" onclick="Honda()">Honda</button>
+    <button class="button" onclick="Toyota()">Toyota</button>
+    <button class="button" onclick="Ford()">Ford</button>
+    <button class="button" onclick="Chevrolet()">Chevrolet</button>
+    <button class="button" onclick="Nissan()">Nissan</button>   
+    
+    </div>
+    <script>
+        function calculate(){
+            let n = document.getElementById("cars").value;
+            let carsRequired = Math.ceil(n / 4);
+            document.getElementById("result").innerText = "Number of cars required: " + carsRequired;
+        }
+
+        function txt() {
+            document.getElementById("txt").style.fontSize = "20px";
+        }
+        function width() {
+            document.getElementById("width").style.width = "200px";
+        }
+        function height() {
+            document.getElementById("height").style.height = "100px";
+        }
+        function txtcolor() {
+            document.getElementById("txtcolor").style.color = "red";
+        }
+        function bgcolor() {
+            document.getElementById("bgcolor").style.backgroundColor = "blue";
+        }
+        function borderRad() {
+            document.getElementById("borderRad").style.borderRadius = "10px";
+        }
+    </script>
+</body>
+</html>

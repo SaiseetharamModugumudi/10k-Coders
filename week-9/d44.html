@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator app</title>
+    <style>
+        div {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 500px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            text-align: center;
+            margin: auto;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            width: 150px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center;
+
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s;
+
+        }
+        h2 {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        #result {
+            font-weight: bold;
+            color: #007BFF;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+    <h1>Calculator App</h1>
+    <!-- creating a calculator which contains one input that user entering numbers and operaters , and create buttons for each operator and also display the result -->
+    <input type="number" id="n1" placeholder="Enter first number">
+    <input type="number" id="n2" placeholder="Enter second number"> 
+    <br><br>
+    <button onclick="calculate('add')">+</button>
+    <button onclick="calculate('sub')">-</button>
+    <button onclick="calculate('mul')">*</button>
+    <button onclick="calculate('div')">/</button>
+    <button onclick="calculate('sqr')">^</button>
+    <h2>Result: <span id="result"></span></h2>
+    </div>
+    <script>
+        // function to perform calculations based on the operator clicked donot ude using switch case
+        function calculate(operator) {
+            const num1 = parseFloat(document.getElementById('n1').value);
+            const num2 = parseFloat(document.getElementById('n2').value);
+            let result;
+
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('result').innerText = 'Please enter valid numbers';
+                return;
+            }
+
+            if (operator === 'add') {
+                result = num1 + num2;
+            } else if (operator === 'sub') {
+                result = num1 - num2;
+            } else if (operator === 'mul') {
+                result = num1 * num2;
+            } else if (operator === 'sqr') {
+                result = num1 ** num2;    
+            }else if (operator === 'div') {
+                if (num2 === 0) {
+                    document.getElementById('result').innerText = 'Cannot divide by zero';
+                    return;
+                }
+                result = num1 / num2;
+            }
+
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+</body>
+</html>

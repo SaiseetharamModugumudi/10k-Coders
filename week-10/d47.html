@@ -1,0 +1,261 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer application</title>
+    <style>
+        /* give me beautiful css code */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            align-content: center;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: hwb(78 0% 0%);
+            color: #333;
+            transition: background-color 0.3s;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: auto;
+            background-color: #1e9ac7;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: default;
+
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px #aaa;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            width: 300px;
+            margin: auto;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: default;
+
+        }
+        #timer {
+            font-size: 48px;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border: none;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+        }
+        button:hover {
+            background-color: #f0f0f0;
+        }
+        button:active {
+            background-color: #ddd;
+        }
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 5px #aaa;
+        }
+        button:disabled {
+            background-color: #eee;
+            color: #aaa;
+            cursor: not-allowed;
+        }
+        button:not(:disabled) {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button:not(:disabled):hover {
+            background-color: #f9f9f9;
+        }
+        button:not(:disabled):active {
+            background-color: #eee;
+        }
+        button:not(:disabled):focus {
+            box-shadow: 0 0 5px #888;
+        }
+    </style>
+</head>
+<body>
+    <!--creating timer application using js on three buttons start, reset and end click once then perform task for each  -->
+    <!-- <h1>Timer Application</h1>
+    <p id="timer">0</p>
+    <button onclick="startTimer()">Start</button>
+    <button onclick="resetTimer()">Reset</button>
+    <button onclick="endTimer()">End</button>
+    <script>
+        let timer = null;
+        let time = 0;
+
+        function updateTimer() {
+            time++;
+            document.getElementById("timer").innerText = time;
+        }
+
+        function startTimer() {
+            if (!timer) {
+                timer = setInterval(updateTimer, 1000);
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            timer = null;
+            time = 0;
+            document.getElementById("timer").innerText = time;
+        }
+
+        function endTimer() {
+            clearInterval(timer);
+            timer = null;
+        }
+    </script>
+</body>
+</html> --> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.bg{
+    background-color:black;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    background-color:white;
+    width:400px;
+    height:200px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius:10px;
+}
+
+.heading{
+    color:black;
+    font-size:40px;
+    font-weight:600;
+    font-family: sans-serif;
+}
+
+.timer{
+    color:grey;
+    font-size:50px;
+    font-weight:500;
+    font-family: sans-serif;
+    margin-top:16px;
+    margin-bottom: 16px;
+}
+
+.btn{
+    background-color:black;
+    width:120px;
+    height:35px;
+    border:none;
+    border-radius:10px;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <div class="card">
+            <h1 class="heading">Stop Wtach</h1>
+            <p class="timer" id="time">00:00</p>
+            <div class="btn-container">
+                <button class="btn" onclick="startBtn()">Start</button>
+                <button class="btn" onclick="resetBtn()">Reset</button>
+                <button class="btn" onclick="stopBtn()">Stop</button>
+            </div>
+        </div>
+    </div>
+    <script>
+    let time = document.getElementById("time")
+    let isTimeRunning = false
+
+    let sec=0;
+    let min=0;
+    let clock;
+    function startBtn(){
+        if(isTimeRunning){
+            return 
+        }
+        isTimeRunning = true
+        clock = setInterval(function(){
+            if(sec==60){
+                min++;
+                sec=0;
+            }
+            let minutes;
+            let seconds;
+            if(sec<10){
+                seconds="0"+sec
+            }else{
+                seconds=sec
+            }
+            if(min<10){
+                minutes="0"+min
+            }else{
+                minutes=min
+            }
+            time.textContent = (minutes+":"+seconds)
+            sec++;   
+        },1000)
+    }
+
+
+    function stopBtn(){
+        clearInterval(clock)
+        isTimeRunning=false
+    }
+
+    function resetBtn(){
+        min=0;
+        sec=0;
+        time.textContent="00:00";
+        clearInterval(clock)
+        isTimeRunning=false;
+    }
+</script>
+</body>
+</html>

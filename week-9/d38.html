@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Web Page with Tabs</title>
+  <style>
+    body {
+      height: 100vh;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: aliceblue;
+    }
+
+    h1, h2, p {
+      margin: 0 0 10px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 10px;
+      background-color: #f0f0f0;
+      gap: 10px;
+    }
+
+    .tabs {
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    /* Sections */
+    .tab-content {
+      display: none; /* hidden by default */
+      margin-top: 20px;
+    }
+
+    .active-tab {
+      display: block; /* only active tab visible */
+    }
+
+    /* About section */
+    .about, .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .h0, .h1, .h2 {
+      flex: 1 1 250px;
+      border: 2px solid #ccc;
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 300px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    /* Contact */
+    .cont {
+      padding: 20px 0;
+      text-align: center;
+      background-color: aliceblue;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      max-width: 300px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    a {
+      margin-right: 10px;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .tabs {
+        font-size: 1rem;
+      }
+      .header {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.4rem;
+      }
+      .h0, .h1, .h2 {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center;">Welcome to My Web Page</h1>
+
+  <div class="main">
+    <!-- Header -->
+    <div class="header">
+      <img src="../1000003681.jpg" alt="logo" style="width: 50px; height: auto;">
+      <h1 class="tabs" onclick="openTab('about')">About</h1>
+      <h1 class="tabs" onclick="openTab('menu')">Menu</h1>
+      <h1 class="tabs" onclick="openTab('specials')">Specials</h1>
+      <h1 class="tabs" onclick="openTab('contact')">Contact</h1>
+    </div><br>
+
+    <!-- About -->
+    <div id="about" class="tab-content active-tab">
+      <h1>About Me</h1>
+      <div class="about">
+        <div class="h0">
+          <img src="https://www.clipartmax.com/png/middle/37-370883_about-me-is-a-fun-and-stimulating-activity-book-that-me-clipart.png" alt="">
+          <h2>About Me</h2>
+          <p>This is a brief introduction about myself. I love coding and creating web pages.</p>
+        </div>
+        <div class="h1">
+          <img src="https://e7.pngegg.com/pngimages/643/954/png-clipart-hobby-symbol-computer-icons-interests-text-photography.png" alt="">
+          <h2>My Interests</h2>
+          <p>I enjoy learning new technologies, especially in web development and design.</p>
+        </div>
+        <div class="h2">
+          <img src="https://images2-cdn.storyjumper.net/transcoder.png?trim&id=64-3jjn8q5p8x-57atow5ve&maxw=512&maxh=512" alt="">
+          <h2>My Hobbies</h2>
+          <p>In my free time, I like to read books, play video games, and explore the outdoors.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu -->
+    <div id="menu" class="tab-content">
+      <h2>Menu</h2>
+      <div class="menu">
+        <div class="h0">
+          <img src="https://www.avanse.com/blogs/images/10feb-blog-2023.jpg" alt="">
+          <h2>Education</h2>
+          <p>Bachelor of Degree</p>
+          <p>SRGEC</p>
+        </div>
+        <div class="h1">
+          <img src="https://static.vecteezy.com/system/resources/previews/027/500/910/non_2x/dob-date-of-birth-day-of-birth-icon-in-line-style-design-isolated-on-white-background-editable-stroke-vector.jpg" alt="">
+          <h2>DOB</h2>
+          <p>16-06-2003</p>
+        </div>
+        <div class="h2">
+          <img src="https://i.pinimg.com/736x/ce/c1/57/cec157f304d27888fff65fb68e2ed630.jpg" alt="">
+          <h2>Background</h2>
+          <p>Agriculture</p>
+        </div>
+        <div class="h0">
+          <img src="https://img.lovepik.com/background/20211022/large/lovepik-family-background-image_500614959.jpg" alt="">
+          <h2>Family Details</h2>
+          <p>Farmers</p>
+        </div>
+        <div class="h1">
+          <img src="https://www.differencebetween.net/wp-content/uploads/2020/01/Difference-Between-Job-Title-and-Occupation-.jpg" alt="">
+          <h2>Occupation</h2>
+          <p>Agricultural Worker</p>
+        </div>  
+      </div>
+    </div>
+
+    <!-- Specials -->
+    <div id="specials" class="tab-content">
+      <h2>Specials</h2>
+      <p style="text-align:center;">🌟 Coming Soon... Stay Tuned! 🌟</p>
+    </div>
+
+    <!-- Contact -->
+    <div id="contact" class="tab-content">
+      <h2>Contact</h2>
+      <p>If you would like to get in touch, please email me at </p>
+      <input type="email" placeholder="Enter your email">
+      <input type="submit" value="Submit">
+      <p>or reach out to me on my social media accounts.</p>
+      <p>Follow me on social media:</p>
+      <a href="https://www.facebook.com" target="_blank">Facebook</a> 
+      <a href="https://www.twitter.com" target="_blank">Twitter</a> 
+      <a href="https://www.instagram.com" target="_blank">Instagram</a>
+    </div>
+  </div>
+
+  <script>
+    function openTab(tabId) {
+      // Hide all sections
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(c => c.classList.remove('active-tab'));
+
+      // Show clicked section
+      document.getElementById(tabId).classList.add('active-tab');
+    }
+  </script>
+</body>
+</html>

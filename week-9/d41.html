@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS tasks</title>
+    <style>
+        .bg {
+            background-color: rgb(164, 224, 34);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        .card {
+            border: 2px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+        }
+        .heading {
+            color: blue;
+        }
+        .counter {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .button {
+            background-color: lightgray;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+ <div class="bg">
+        <div class="card">
+            <h1 class="heading">Counter</h1>
+            <p class="counter" id="count">0</p>
+            <div>
+                <button class="button" ondblclick="Increasebtn()">Increase</button>
+                <button class="button" ondblclick="Resetbtn()">Reset</button>
+                <button class="button" ondblclick="Decreasebtn()">Decrease</button>
+            </div>
+        </div>
+    </div>
+<br><br>
+     <div class="bg">
+        <div class="card">
+            <img  id="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjTqd7-0sXkpkIXeeJdBYGMOd9sB_99fONRQ&s"><br><br>
+            <div>
+                <button class="btn1" ondblclick="OnIncbtn()">ZoomIn</button>
+                <button class="btn2" ondblclick="OnDecbtn()">ZoomOut</button>
+            </div>
+            <p id="Warning" class="War"></p>
+        </div>
+    </div>
+
+    <script>
+        // Counter logic
+        let counterElement = document.getElementById("count");
+        let counterValue = 0;
+
+        function Increasebtn(){
+            counterValue++;
+            counterElement.textContent = counterValue;
+        }
+        function Resetbtn(){
+            counterValue = 0;
+            counterElement.textContent = counterValue;
+        }
+        function Decreasebtn(){
+            if(counterValue > 0){
+                counterValue--;
+                counterElement.textContent = counterValue;
+            }
+        }
+
+        // Image Zoom logic
+        let image = document.getElementById("image");
+        let Warning = document.getElementById("Warning");
+        let imgWidth = 120;  // Initial width
+        image.style.width = imgWidth + "px";
+
+        function OnIncbtn(){
+            if(imgWidth <= 500){
+                imgWidth += 5;
+                image.style.width = imgWidth + "px";
+                Warning.textContent = "";
+            } else {
+                Warning.textContent = "Image is too high";
+                Warning.style.color = "red";
+            }
+        } 
+
+        function OnDecbtn(){
+            if(imgWidth >= 60){
+                imgWidth -= 5;
+                image.style.width = imgWidth + "px";
+                Warning.textContent = "";
+            } else {
+                Warning.textContent = "Image is too Low";
+                Warning.style.color = "red";
+            }
+        } 
+    </script>
+</body>
+</html>

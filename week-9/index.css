@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f4f4f2, #9face6);
+}
+
+.container {
+    text-align: center;
+    background: #ffffffdd;
+    padding: 2rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 320px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+#input {
+    padding: 10px;
+    width: 80%;
+    font-size: 1rem;
+    border: 2px solid #9face6;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+#input:focus {
+    border-color: #74ebd5;
+    box-shadow: 0 0 8px #74ebd5;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #9face6, #74ebd5);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#res {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#score {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #4c0be5;
+}

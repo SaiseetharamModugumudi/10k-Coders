@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Total Money Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4faff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      width: 320px;
+      text-align: center;
+    }
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+      text-align: left;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Money Calculator</h2>
+
+    <label for="note100">Enter no. of ₹100 notes:</label>
+    <input type="number" id="note100" placeholder="e.g., 5">
+
+    <label for="note200">Enter no. of ₹200 notes:</label>
+    <input type="number" id="note200" placeholder="e.g., 3">
+
+    <label for="note500">Enter no. of ₹500 notes:</label>
+    <input type="number" id="note500" placeholder="e.g., 2">
+
+    <button onclick="calculateTotal()">Calculate Total</button>
+
+    <div class="result" id="result">Total: ₹0</div>
+  </div>
+
+  <script>
+    function calculateTotal() {
+      let note100 = parseInt(document.getElementById("note100").value) || 0;
+      let note200 = parseInt(document.getElementById("note200").value) || 0;
+      let note500 = parseInt(document.getElementById("note500").value) || 0;
+
+      let total = (note100 * 100) + (note200 * 200) + (note500 * 500);
+
+      document.getElementById("result").textContent = "Total: ₹" + total;
+    }
+  </script>
+
+</body>
+</html>

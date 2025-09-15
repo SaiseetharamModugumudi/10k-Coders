@@ -1,0 +1,55 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg{
+            background-color: black;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: auto;
+            color: white;
+        }
+        .heading{
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        .img{
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        .timer{
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <h1 class="heading">Bomb Blast</h1>
+        <img id="image" width="250px" class="img" src="https://t3.ftcdn.net/jpg/00/42/53/70/360_F_42537001_JMwYOwBmDJ4pXlkMNRUZl8LkZ7TYoa9x.jpg">
+        <p id="timer" class="timer" style="color: red;">0:00</p>
+    </div>
+    <script>
+        let time = 10;
+        let timerElement = document.getElementById("timer");
+        let imageElement = document.getElementById("image");
+
+        function updateTimer() {
+            if (time > 0) {
+                timerElement.textContent = "Timer: " + time;
+                time--;
+            } else {
+                clearInterval(timerInterval);
+                timerElement.textContent = "Boom! 💥";
+                imageElement.src = "https://t4.ftcdn.net/jpg/03/49/35/27/360_F_349352798_LnXo2jv5u6g1b3f1b0gWcX9e6q8kz7pD.jpg";
+            }
+        }
+
+        let timerInterval = setInterval(updateTimer, 1000);
+        updateTimer(); // Initial call to display the starting time
+    </script>
+
+</body></html>

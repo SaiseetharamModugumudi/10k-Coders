@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color time</title>
+    <style>
+        #timer {
+            font-size: 48px;
+            font-weight: bold;
+            color: black;
+        }   
+    body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- time based color changer , if 1:00 is reached, change time color to red , after 2 mins to blue for n seconds -->
+    <div id="timer">2:00</div><br><br>
+    <button onclick="startTimer()">Start Timer</button>
+    <button onclick="resetTimer()">Reset Timer</button>
+    <button onclick="endTimer()">End Timer</button>
+
+    <script>
+        let totalTime = 120; // Total time in seconds (2 minutes)
+        let timerInterval;
+
+        function startTimer() {
+            clearInterval(timerInterval); // Clear any existing interval
+            totalTime = 120; // Reset to 2 minutes
+            document.getElementById("timer").style.color = "black"; // Reset color
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        function updateTimer() {
+            if (totalTime > 0) {
+                totalTime--;
+                let minutes = Math.floor(totalTime / 60);
+                let seconds = totalTime % 60;
+                document.getElementById("timer").innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+                // Change color based on time left
+                if (totalTime <= 60 && totalTime > 30) {
+                    document.getElementById("timer").style.color = "red"; // Change to red after 1 minute
+                } else if (totalTime <= 30) {
+                    document.getElementById("timer").style.color = "blue"; // Change to blue after 1.5 minutes
+                }
+            } else {
+                clearInterval(timerInterval);
+                document.getElementById("timer").innerText = "Time's up!";
+            }
+        }
+    </script>
+</body>
+</html>

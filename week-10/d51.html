@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Countdown Timer (10, 20, 30 minutes)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1b9abe, #d2da32);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .timer-box {
+      text-align: center;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    #timer {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #ff4d4d;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      margin: 5px;
+      background: #bac22f;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="timer-box">
+    <h2>Timer</h2>
+    <p id="timer">00:00</p>
+    <!-- Buttons to start countdown from 10, 20 or 30 minutes -->
+    <button onclick="startCountdown(10)">10</button>
+    <button onclick="startCountdown(20)">20</button>
+    <button onclick="startCountdown(30)">30</button>
+    <button onclick="resetCountdown()">Reset</button>
+  </div>
+
+  <script>
+    let countdown;   // variable to store interval
+    let time = 0;    // remaining time in seconds
+
+    // Function to start countdown
+    function startCountdown(minutes) {
+      clearInterval(countdown);       // stop any previous countdown
+      time = minutes * 60;            // convert minutes to seconds
+
+      countdown = setInterval(() => {
+        let mins = Math.floor(time / 60);
+        let secs = time % 60;
+        secs = secs < 10 ? "0" + secs : secs;
+
+        document.getElementById("timer").innerHTML =
+          (mins < 10 ? "0" + mins : mins) + ":" + secs;
+
+        if (time <= 0) {
+          clearInterval(countdown); // stop when it reaches 0
+          document.getElementById("timer").innerHTML = "Time's up!";
+          alert("Countdown finished!");
+        }
+        time--; // decrease by 1 sec
+      }, 1000);
+    }
+
+    // Function to reset timer
+    function resetCountdown() {
+      clearInterval(countdown);  // stop countdown
+      document.getElementById("timer").innerHTML = "00:00"; // reset display
+    }
+
+    let names=['sai','seetha','ram','laxman'];
+    console.log(names[3]);
+    // push, pop, shift, unshift, splice, slice, concat, indexOf, includes, at
+    console.log(names.length);
+    console.log(names.at(-1));
+    console.log(names.push('raj'));
+    console.log(names);
+    console.log(names.pop());
+    console.log(names);
+    console.log(names.shift());
+    console.log(names);
+    console.log(names.unshift('sai'));
+    console.log(names);
+    console.log(names.splice(3,1,'kumar'));
+    console.log(names);
+    console.log(names.slice(1,4));
+    console.log(names);
+    console.log(names.indexOf('ram'));
+    console.log(names.includes('ram'));
+
+    // problems
+    // Input: [1, 2, 3], add 4 Output: [1, 2, 3, 4]
+    let arr=[1,2,3];
+    arr.push(4);
+    console.log(arr);
+    // Input: [1, 2, 3, 4], remove 3 Output: [1, 2, 4]
+    arr.splice(2,1);
+    console.log(arr);
+    // Input: [4, 7, 1, 9] Output: 9
+    console.log(Math.max(...arr));
+    // Input: [4, 7, 1, 9] Output: 1
+    console.log(Math.min(...arr));
+    // . Input: [1, 2, 3] Output: 6
+    console.log(arr.reduce((a,b)=>a+b,0));
+    // Input: [1, 2, 2, 3, 2], value 2 Output: 3
+    let arr1=[1,2,2,3,2];
+    let count=0;
+    arr1.forEach((num)=>{
+        if(num===2){
+            count++;
+        }
+    });
+    console.log(count);
+    // Input: [1, 2, 3] Output: [3, 2, 1]
+    console.log(arr.reverse());
+    // Input: [4, 1, 3, 2] Output: [1, 2, 3, 4]
+    console.log(arr.sort((a,b)=>a-b));
+    // . Input: [1, 2, 2, 3] Output: [1, 2, 3]
+    let arr2=[1,2,2,3];
+    let unqArr=[...new Set(arr2)];
+    console.log(unqArr);
+    // Input: [1, 2], [3, 4] Output: [1, 2, 3, 4]
+    let arr3=[1,2];
+    let arr4=[3,4];
+    console.log(arr3.concat(arr4));
+    // Input: [1, 2, 3], [2, 3, 4] Output: [2, 3]
+    let arr5=[1,2,3];
+    let arr6=[2,3,4];
+    let common=arr5.filter(num=>arr6.includes(num));
+    console.log(common);
+    // Input: [1, 2, 3, 4] Output: [2, 4]
+    let arr7=[1,2,3,4];
+    let evenArr=arr7.filter(num=>num%2===0);
+    console.log(evenArr);
+    // Input: [1, 2, 3, 4] Output: [1, 3]
+    let oddArr=arr7.filter(num=>num%2!==0);
+    console.log(oddArr);
+    // . Input: [1, 2, 1] Output: True
+    let arr8=[1,2,1];
+    let isPalindrome=true;
+    for(let i=0;i<arr8.length/2;i++){
+        if(arr8[i]!==arr8[arr8.length-1-i]){
+            isPalindrome=false;
+            break;
+        }
+    }
+    console.log(isPalindrome);
+    // . Input: [0, -1, 2, -3, 4] Output: Positive: 2, Negative: 2, Zero: 1
+    let arr9=[0,-1,2,-3,4];
+    let posCount=0,negCount=0,zeroCount=0;
+    arr9.forEach(num=>{
+        if(num>0) posCount++;
+        else if(num<0) negCount++;
+        else zeroCount++;
+    });
+    console.log(`Positive: ${posCount}, Negative: ${negCount}, Zero: ${zeroCount}`);
+    // Input: [1, 3, 4, 5, 0] Output: 4
+    let arr10=[1,3,4,5,0];
+    let secondLargest=arr10.sort((a,b)=>b-a)[1];
+    console.log(secondLargest);
+    //Input: [5, 1, 4, 2, 3] Output: 2
+    let arr11=[5,1,4,2,3];
+    let secondSmallest=arr11.sort((a,b)=>a-b)[1];
+    console.log(secondSmallest);
+    // Explanation: Use slicing or copy(). Input: [1, 2, 3] Output: [1, 2, 3]
+    let arr12=[1,2,3];
+    let arrCopy=[...arr12];
+    console.log(arrCopy);
+    // Input: [1, 2, 3, 4, 5] Output: [2, 3, 5]
+    let arr13=[1,2,3,4,5];
+    let filteredArr=arr13.filter(num=>num!==1 && num!==4);
+    console.log(filteredArr);
+    // Input: [0, 2, 0, 4], replace with -1 Output: [-1, 2, -1, 4]
+    let arr14=[0,2,0,4];
+    let replacedArr=arr14.map(num=>num===0?-1:num);
+    console.log(replacedArr);
+    // Input: [5, 5, 5, 5] Output: True
+    let arr15=[5,5,5,5];
+    let allSame=arr15.every(num=>num===arr15[0]);
+    console.log(allSame);
+    // Input: [1, 2, 2, 3, 1] Output: {1: 2, 2: 2, 3: 1}
+    let arr16=[1,2,2,3,1];
+    let freqMap={};
+    arr16.forEach(num=>{
+        freqMap[num]=(freqMap[num]||0)+1;
+    });
+    console.log(freqMap);
+    // . Input: [[1, 2], [3, 4]] Output: [1, 2, 3, 4]
+    let arr17=[[1,2],[3,4]];
+    let flatArr=arr17.flat();
+    console.log(flatArr);
+    // Input: [1, 2, 3, 4, 5] Output: Even: [2, 4], Odd: [1, 3, 5]
+    let arr18=[1,2,3,4,5];
+    let evenNums=arr18.filter(num=>num%2===0);
+    let oddNums=arr18.filter(num=>num%2!==0);
+    console.log(`Even: [${evenNums}], Odd: [${oddNums}]`);
+    // Input: [1, 2, 3, 4], sum = 5 Output: [(1, 4), (2, 3)]
+    let arr19=[1,2,3,4];
+    let targetSum=5;
+    let pairs=[];
+    let seen=new Set();
+    arr19.forEach(num=>{
+        let complement=targetSum-num;
+        if(seen.has(complement)){
+            pairs.push([complement,num]);
+        }
+        seen.add(num);
+    });
+    console.log(pairs);
+    // Input: [1, 2, 3, 4, 5] Output: [2, 4]
+    let arr20=[1,2,3,4,5];
+    let evenOnly=arr20.filter(num=>num%2===0);
+    console.log(evenOnly);
+    // . Input: [1, 2, 3, 4, 5] Output: [1, 3, 5]
+    let oddOnly=arr20.filter(num=>num%2!==0);
+    console.log(oddOnly);
+    // Input: [1, 2, 3], multiply by 2 Output: [2, 4, 6]
+    let arr21=[1,2,3];
+    let multipliedArr=arr21.map(num=>num*2);
+    console.log(multipliedArr);
+    // Input: [4, 2, 7, 1] Output: 6
+    let arr22=[4,2,7,1];
+    let range=Math.max(...arr22)-Math.min(...arr22);
+    console.log(range);
+    // Input: [] Output: True
+    let arr23=[];
+    let isEmpty=arr23.length===0;
+    console.log(isEmpty);
+    // Input: [1, 2, 4], insert 3 at index 2 Output: [1, 2, 3, 4]
+    let arr24=[1,2,4];
+    arr24.splice(2,0,3);
+    console.log(arr24);
+    // Input: [1, 2, 2, 3], remove 2 Output: [1, 3]
+    let arr25=[1,2,2,3];
+    let removedArr=arr25.filter(num=>num!==2);
+    console.log(removedArr);
+    // Input: [10, 20, 30], find index of 20 Output: 1
+    let arr26=[10,20,30];
+    console.log(arr26.indexOf(20));
+    // Input: [1, 2, 3] Output: [1, 4, 9]
+    let arr27=[1,2,3];
+    let squaredArr=arr27.map(num=>num*num);
+    console.log(squaredArr);
+    // Input: [-1, 2, -3, 4] Output: [2, 4]
+    let arr28=[-1,2,-3,4];
+    let positiveArr=arr28.filter(num=>num>0);
+    console.log(positiveArr);
+    // Input: [1, 2, 2, 3, 3, 4] Output: [2, 3]
+    let arr29=[1,2,2,3,3,4];
+    let duplicates=arr29.filter((num,index)=>arr29.indexOf(num)!==index
+    );
+    let uniqueDuplicates=[...new Set(duplicates)];
+    console.log(uniqueDuplicates);
+    // Input: [1, 2, 3, 4], k = 2 Output: [3, 4, 1, 2]
+    let arr30=[1,2,3,4];
+    let k=2;
+    let rotatedArr=arr30.slice(k).concat(arr30.slice(0,k));
+    console.log(rotatedArr);  
+
+  </script>
+</body>
+</html>

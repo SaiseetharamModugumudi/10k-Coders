@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer decreaser</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f0f0f0;
+        }
+        h1{
+            color: #333;
+        }
+        #timer{
+            font-size: 48px;
+            color: #ff0000;
+            margin: 20px 0;
+        }
+        button{
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        button:hover{
+            background-color: #45a049;
+        }
+        button:active{
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+   <h1>timer starts</h1>
+   <!-- user clicks a three buttons 10,20,30 when click on 10 it will starts timer 10 to 0 as same for remaining buttons -->
+    <p id="timer">0</p> 
+    <button onclick="startTimer(10)">10</button>
+    <button onclick="startTimer(20)">20</button>
+    <button onclick="startTimer(30)">30</button>
+    <script>
+        let timer = null;
+        let time = 0;
+
+        function updateTimer() {
+            if (time > 0) {
+                time--;
+                document.getElementById("timer").innerText = time;
+            } else {
+                clearInterval(timer);
+                timer = null;
+            }
+        }
+
+        function startTimer(seconds) {
+            if (!timer) {
+                time = seconds;
+                document.getElementById("timer"*60).innerText = time;
+                timer = setInterval(updateTimer, 1000);
+            }
+        }
+    </script>
+</body>
+</html>
